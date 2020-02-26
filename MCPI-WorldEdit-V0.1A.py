@@ -23,10 +23,10 @@ def getPos2():
     pos2z = round(pos2z, 0)
     mc.postToChat("Pos 2 is set to (" + str(pos2x) + ", " + str(pos2y) + ", " + str(pos2z) + ")")
 
-def setBlocks(data = 0):
+def cuboid(data):
     global pos1x, pos1y, pos1z, pos2x, pos2y, pos2z, blockID
     int(blockID)
-    mc.setBlocks(pos1x - 1, pos1y - 1 ,pos1z - 1, pos2x + 1, pos2y - 1, pos2z + 1, blockID)
+    mc.setBlocks(pos1x, pos1y - 1 ,pos1z, pos2x, pos2y - 1, pos2z, blockID, data)
     
 def toggle_world():
     global worldType
@@ -61,7 +61,7 @@ def on_press(key):
     
 def on_release(key):
     print('{0} pressed'.format(key))
-    global blockID
+    global blockID, data
     if key == Key.up:
         toggle_world()
     if key == Key.left:
@@ -69,9 +69,15 @@ def on_release(key):
     if key == Key.right:
         getPos2()
     if key == Key.down:
-        blockID = int(input("Choose block ID: "))
-        setBlocks()
-        
+        try:
+            blockID = int(input("Choose block ID: "))
+        except ValueError:
+            return
+        try:
+            data = int(input("Block Data:"))
+        except ValueError:
+            return
+        cuboid(data)
 
 # Collect events until released
 with Listener(
