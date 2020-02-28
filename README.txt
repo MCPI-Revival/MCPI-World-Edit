@@ -1,4 +1,5 @@
 # MCPI-World-Edit
+To download the newest version, go to the releases tab
 An extremely simple version of world edit for MCPI.
 Up arrow: Toggle between Void, Small Superflat, and Large Superflat Worlds.
 The first time you do it, there will be a lot of lag.
