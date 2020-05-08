@@ -6,6 +6,7 @@ The first time you do it, there will be a lot of lag.
 Left arrow: Select Position 1
 Right arrow: Select Position 2
 Down arrow: Fill in with blocks
+Right shift: Change Function
 You will be prompted to give a block ID and block Data in the terminal or IDLE shell depending on where you are
 running it from.
 Type 0 for block data if you don't know what it is.
