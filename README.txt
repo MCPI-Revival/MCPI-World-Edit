@@ -1,5 +1,5 @@
 # MCPI-World-Edit
-To download the newest version, go to the releases tab
+To download older versions, go to the releases tab
 An extremely simple version of world edit for MCPI.
 Up arrow: Toggle between Void, Small Superflat, and Large Superflat Worlds.
 The first time you do it, there will be a lot of lag.
@@ -23,7 +23,7 @@ If you don't have IDLE installed, I recommend that you install it with the comma
  "sudo apt-get install idle-python3.7" (Without quotes)
 You should see IDLE appear in your programming menu. Launch it and open the mod (File, Open), then hit "Run" and then "Run Module"
 Make sure that Minecraft Pi is open first.
-If you don't want to install IDLE, you can launch the mod from terminal.
+If you don't want to install IDLE, you can launch the mod from terminal or Thonny python IDE.
 First, navigate to where the file is stored. It will probably be in your downloads folder. If so, type:
 "cd /home/pi/Downloads"
 Then to launch the program:
