@@ -4,7 +4,7 @@ An extremely simple version of world edit for MCPI.
 
 SETUP:
 Download the code
-Double-click it to open it in thonny
+Double-click it to open it in Thonny
 Make sure that minecraft is open and a world is loaded
 Press the green triangle on the top of the screen to run it
 Press the red square if you want to stop it
@@ -51,7 +51,7 @@ ID:  13
 Data of Block to be replaced 2/2 0
 Replacenear: Same thing, only you give it a radius. Note that this will scan every single air block, and could take a while.
 
-Thanks for downloading, and if there is any features you would like added, feel free to tell me!
+Thanks for downloading, and if there are any features you would like added, feel free to tell me!
 Please report any bugs.
 
 Known bugs:
