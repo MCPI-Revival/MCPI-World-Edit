@@ -4,6 +4,8 @@ An extremely simple version of world edit for MCPI.
 
 SETUP:
 Download the code
+In terminal type "pip3 install pynput"
+Wait for it to finish
 Double-click it to open it in Thonny
 Make sure that minecraft is open and a world is loaded
 Press the green triangle on the top of the screen to run it
