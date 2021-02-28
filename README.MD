@@ -28,23 +28,23 @@ Center: Creates a single block at the center of a given area.
 Replace: Replaces certain blocks in a given area with a list of player chosen ID's and data. 
 For example, if you want to replace all the grass and birch wood in the given area with TNT blocks with data 1 and gravel:
 The query you will see:
-Replace
-Pos1:  0   1   -7
-Pos2:  -8   3   1
-How many types of blocks would you like to replace? 2
-ID or Block to be replaced 1/2 grass
-ID:  2
-Data of Block to be replaced 1/2 0
-ID or Block to be replaced 2/2 wood
-ID:  17
-Data of Block to be replaced 2/2 2
-How many different blocks would you like to replace them with? 2
-ID or Block to be replaced 1/2 tnt
-ID:  46
-Data of Block to be replaced 1/2 1
-ID or Block to be replaced 2/2 gravel
-ID:  13
-Data of Block to be replaced 2/2 0
+- Replace
+- Pos1:  0   1   -7
+- Pos2:  -8   3   1
+- How many types of blocks would you like to replace? 2
+- ID or Block to be replaced 1/2 grass
+- ID:  2
+- Data of Block to be replaced 1/2 0
+- ID or Block to be replaced 2/2 wood
+- ID:  17
+- Data of Block to be replaced 2/2 2
+- How many different blocks would you like to replace them with? 2
+- ID or Block to be replaced 1/2 tnt
+- ID:  46
+- Data of Block to be replaced 1/2 1
+- ID or Block to be replaced 2/2 gravel
+- ID:  13
+- Data of Block to be replaced 2/2 0
 
 Go to [our wiki](https://wiki.mcpirevival.tk/wiki/Minecraft:_Pi_Edition_block_list) for a full block ID reference!
 
