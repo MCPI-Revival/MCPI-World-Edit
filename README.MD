@@ -1,9 +1,10 @@
 # MCPI-World-Edit
-A extremely simple version of worldedit for MCPI, which functions such as shape generation, world type changing, and even "schmatics"! Made by [scratchermatch](https://github.com/scratchermatch).
+A extremely simple version of worldedit for MCPI, which functions such as shape generation, world type changing, and even "schmatics"! Made by [scratchermatch](https://github.com/scratchermatch). (some revisions made by [Robert Furr](https://github.com/robtech21))
 
 ## SETUP
-1) Download the python script at https://github.com/MCPI-Revival/MCPI-World-Edit/releases/latest. In terminal, type `pip3 install pynput` and wait for it to finish.
+1) Download the python script at https://github.com/MCPI-Revival/MCPI-World-Edit/releases/latest. In terminal, type `pip3 install -r requirements.txt` and wait for it to finish.
 2) Make sure that minecraft is open and a world is loaded. Open the python script in a code IDE, or run it with `python3 MCPI_World_Edit*`
+3) You can also run it by opening your terminal and typing `chmod +x MCPI_World_Edit` (you only need to do that once) and run it by typing `./MCPI_World_Edit*` 
 
 Due to the nature of MCPI multiplayer, things created using the python api will not be seen by others on a server.
 Only things created by the host are universal (so don't go on a server building giant objects because only you'll be able to see them!).
