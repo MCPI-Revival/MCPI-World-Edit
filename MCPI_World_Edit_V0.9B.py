@@ -10,7 +10,8 @@ import mcpi.block as block
 import math
 #Import random (for replace & replacenear functions)
 import random
-#Detect key presses. If you don't have this, do: pip3 install pynput
+
+#Detects key presses
 from pynput.keyboard import Key, Listener
 
 #Less typing for me :)
@@ -24,6 +25,10 @@ func = 1
 #What function is currently toggled. See change_function() for more information.
 delete = 0
 #How many more presses until world is toggled.
+
+#Just shortens the code a little :)
+setBlks = mc.setBlocks
+chatMsg = mc.postToChat
 
 #And this kids, is why you learn to type.
 blockDict = {
@@ -166,7 +171,7 @@ def replacenear(oldIDList, newIDList, oldDataList, newDataList, radius, x, y, z)
                             mc.setBlock(xlow + x, ylow + y, zlow + z, newID, newDataList[newIDList.index(newID)])
                         else:
                             mc.setBlock(xlow + x, ylow + y, zlow + z, newIDList[0], newDataList[0])
-    mc.postToChat("Operation complete. " + str(blocksChangedCount) + " blocks were affected.")
+    chatMsg("Operation complete. " + str(blocksChangedCount) + " blocks were affected.")
 
 def getPos1():
     global pos1x, pos1y, pos1z
@@ -197,12 +202,16 @@ def hcube(data, ID, x1, x2, y1, y2, z1, z2):
         z2 = z1
         z1 = buf
     #This used to create a cube then a cube of air inside of it, but that deletes the insides (not good)
-    mc.setBlocks(x1, y1 - 1, z2, x2, y2 - 1, z2, ID, data) #Back wall
-    mc.setBlocks(x1, y1 - 1, z1, x2, y2 - 1, z1, ID, data) #Front wall
-    mc.setBlocks(x1, y1 - 1, z1, x1, y2 - 1, z2, ID, data) #Left wall
-    mc.setBlocks(x2, y1 - 1, z1, x2, y2 - 1, z2, ID, data) #Right wall
-    mc.setBlocks(x1, y1 - 1, z1, x2, y1 - 1, z2, ID, data) #Floor
-    mc.setBlocks(x1, y2 - 1, z1, x2, y2 - 1, z2, ID, data) #Roof
+    
+    #Shortens the code a little
+    
+    
+    setBlks(x1, y1 - 1, z2, x2, y2 - 1, z2, ID, data) #Back wall
+    setBlks(x1, y1 - 1, z1, x2, y2 - 1, z1, ID, data) #Front wall
+    setBlks(x1, y1 - 1, z1, x1, y2 - 1, z2, ID, data) #Left wall
+    setBlks(x2, y1 - 1, z1, x2, y2 - 1, z2, ID, data) #Right wall
+    setBlks(x1, y1 - 1, z1, x2, y1 - 1, z2, ID, data) #Floor
+    setBlks(x1, y2 - 1, z1, x2, y2 - 1, z2, ID, data) #Roof
     
 #Creates walls given 2 points and block + data
 def walls(data, ID, x1, x2, y1, y2, z1, z2):
@@ -221,10 +230,10 @@ def walls(data, ID, x1, x2, y1, y2, z1, z2):
         z2 = z1
         z1 = buf
         z1 = buf
-    mc.setBlocks(x1, y1 - 1, z2, x2, y2 - 1, z2, ID, data) #Back wall
-    mc.setBlocks(x1, y1 - 1, z1, x2, y2 - 1, z1, ID, data) #Front wall
-    mc.setBlocks(x1, y1 - 1, z1, x1, y2 - 1, z2, ID, data) #Left wall
-    mc.setBlocks(x2, y1 - 1, z1, x2, y2 - 1, z2, ID, data) #Right wall
+    setBlks(x1, y1 - 1, z2, x2, y2 - 1, z2, ID, data) #Back wall
+    setBlks(x1, y1 - 1, z1, x2, y2 - 1, z1, ID, data) #Front wall
+    setBlks(x1, y1 - 1, z1, x1, y2 - 1, z2, ID, data) #Left wall
+    setBlks(x2, y1 - 1, z1, x2, y2 - 1, z2, ID, data) #Right wall
     
 def toggle_world():
     global worldType
@@ -232,23 +241,23 @@ def toggle_world():
     if worldType > 3:
         worldType = 1
     if worldType == 1:
-        mc.postToChat("Toggled to void world")
+        chatMsg("Toggled to void world")
         mc.setBlocks(-128, -64,-128, 128, 30, 128, 0)
         mc.player.setPos(0,10,0)
-        mc.setBlocks(-10, 0, -10, 10, 0, 10, 1)
-        mc.postToChat("Platform Created At (0, 0). Teleporting you there now.")
+        setBlks(-10, 0, -10, 10, 0, 10, 1)
+        chatMsg("Platform Created At (0, 0). Teleporting you there now.")
     if worldType == 2:
-        mc.postToChat("Toggled to small superflat")
-        mc.setBlocks(-128, -64, -128, 128, -64, 128, 7)
-        mc.setBlocks(-128, -63, -128, 128, -62, 128, 3)
-        mc.setBlocks(-128, -61, -128, 128, -61, 128, 2)
+        chatMsg("Toggled to small superflat")
+        setBlks(-128, -64, -128, 128, -64, 128, 7)
+        setBlks(-128, -63, -128, 128, -62, 128, 3)
+        setBlks(-128, -61, -128, 128, -61, 128, 2)
         x, y, z = mc.player.getPos()
         mc.player.setPos = x, -60, z
     if worldType == 3:
-        mc.postToChat("Toggled to large superflat")
-        mc.setBlocks(-128, -64, -128, 128, -64, 128, 7)
-        mc.setBlocks(-128, -63, -128, 128, -50, 128, 3)
-        mc.setBlocks(-128, -49, -128, 128, -49, 128, 2)
+        chatMsg("Toggled to large superflat")
+        setBlks(-128, -64, -128, 128, -64, 128, 7)
+        setBlks(-128, -63, -128, 128, -50, 128, 3)
+        setBlks(-128, -49, -128, 128, -49, 128, 2)
         x, y, z = mc.player.getPos()
         mc.player.setPos = x, -48, z
     return
@@ -332,7 +341,7 @@ def change_function():
     if func == 9:
         func = 1
     print(funcDict[func])
-    mc.postToChat(funcDict[func])
+    chatMsg(funcDict[func])
 
 def findType(ID):
     try:
@@ -373,13 +382,13 @@ def setblock_query():
             print("Pos1: ", pos1x, " ", pos1y, " ", pos1z)
         except NameError:
             print("Pos1 not defined! Please select an area!")
-            mc.postToChat("Pos1 not defined! Please select an area!")
+            chatMsg("Pos1 not defined! Please select an area!")
             return
         try: #Make sure pos2 is defined.
             print("Pos2: ", pos2x, " ", pos2y, " ", pos2z)
         except NameError:
             print("Pos2 not defined! Please select an area!")
-            mc.postToChat("Pos2 not defined! Please select an area!")
+            chatMsg("Pos2 not defined! Please select an area!")
             return
     if not func == 7 and not func == 8: #If the function isn't replace or replace near
         ID = input("Choose block ID or name: ") #Get block ID from user
